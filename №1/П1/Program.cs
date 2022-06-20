@@ -1,19 +1,13 @@
-﻿double sum;
-double firstNum;
-double lastNum;
-
-try
+﻿try
 {
-    Console.Write("Введите первое число: ");
-    firstNum = double.Parse(Console.ReadLine());
-    Console.Write("Введите второе число: ");
-    lastNum = double.Parse(Console.ReadLine());
-
-    sum = firstNum + lastNum;
-
-    Console.WriteLine($"{firstNum} + {lastNum} = {sum}");
+    Console.Write("Введите радиус окружности: ");
+    var radius = double.Parse(Console.ReadLine());
+    var length = 2 * Math.PI * radius;
+    var square = Math.PI * radius * radius;
+    Console.WriteLine($"Длина окружности: {length}"); 
+    Console.WriteLine($"Площадь окружности: {square}"); 
 }
 catch (Exception ex)
-{ 
+{
     Console.WriteLine(ex.Message);
 }

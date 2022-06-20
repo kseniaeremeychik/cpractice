@@ -1,21 +1,56 @@
 ﻿try
 {
-    Console.Write("Введите первую сторону треугольника: ");
-    var a = double.Parse(Console.ReadLine());
-    Console.Write("Введите вторую сторону треугольника: ");
-    var b = double.Parse(Console.ReadLine());
-    Console.Write("Введите третью сторону треугольника: ");
-    var c = double.Parse(Console.ReadLine());
-
-    if (a + b > c && a + c > b && b + c > a)
-    {
-        Console.WriteLine("Треугольник существует");
-    } else {
-        Console.WriteLine("Треугольника не существует");
-    }
-
+    Product st = new Product() {
+    ProduceName = "Tovar",
+    Category = "Krutoi",
+    Price = 100,
+    };
+    st.Print();
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
+}
+
+class Produce
+{
+    public string ProduceName { get; set; }
+    public string Category { get; set; }
+
+    public void Print()
+    {
+        Console.WriteLine("Продукт создан");
+    }
+}
+
+class Toy : Product
+{
+    public string ToyName { get; set; }
+
+    public void Print()
+    {
+        Console.WriteLine("Игрушка создана");
+    }
+
+}
+
+class MilkProduce : Produce
+{
+    public string Milk { get; set; }
+
+    public void Print()
+    {
+        Console.WriteLine("Молочный продукт создан");
+    }
+
+}
+
+class Product : Produce
+{
+    public int Price { get; set; }
+
+    public void Print()
+    {
+        Console.WriteLine("Товар создан");
+    }
 }

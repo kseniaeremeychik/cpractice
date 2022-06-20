@@ -1,12 +1,10 @@
-﻿var x = 2.7;
+﻿double i = 1;
 
-try
-{
-    var y = Math.Log(x + Math.Sqrt(Math.Pow(x, 2) + 9)) - (x + 1) / Math.Atan(Math.Pow(x, 3));
+Console.Write("Введите N: ");
+uint n = uint.Parse(Console.ReadLine());
 
-    Console.WriteLine($"result = {y}");
+for (int x = 2; x <= n; x++) {
+    i += (1.0 / x);
 }
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+
+Console.WriteLine($"Результат: {i}");

@@ -1,16 +1,20 @@
 ﻿try
 {
-    Console.Write("Введите величину временного интервала (в минутах): ");
-    int minutes = int.Parse(Console.ReadLine());
+    Console.Write("Введите х: ");
+    var x = double.Parse(Console.ReadLine());
 
-    int hours = minutes / 60; 
-    int othminutes = minutes - (hours * 60);
-
-    Console.WriteLine($"{minutes} минут - это {hours}ч. {othminutes}мин.");
-
+    if (x <= Math.PI)
+    {
+        var y = x + 2 * x * Math.Sin(3 * x);
+        Console.WriteLine($"y = {y}");
+    }
+    else
+    {
+        var y = Math.Cos(x) + 2;
+        Console.WriteLine($"y = {y}");
+    }
 }
 catch (Exception ex)
 {
     Console.WriteLine(ex.Message);
 }
-

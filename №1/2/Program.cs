@@ -1,27 +1,19 @@
-﻿static void GetDigitsVariants(int num)
+﻿try
 {
-    var variants = new int[][]
-    {
-        new int []{ 0, 1, 2},
-        new int []{ 0, 2, 1},
-        new int []{ 2, 0, 1},
-        new int []{ 2, 1, 0},
-        new int []{ 1, 2, 0},
-        new int []{ 1, 0, 2},
-    };
-    var digits = new int[] { num / 100, (num % 100) / 10, num % 10 };
-    var result = new int[variants.GetLength(0)];
-    for (int i = 0; i < result.Length; i++)
-    {
-        var item = variants[i];
-        result[i] = digits[item[0]] * 100 + digits[item[1]] * 10 + digits[item[2]];
-        Console.WriteLine($"Вариант {i + 1}: {result[i]}");
-    }
-}
+    Console.Write("Введите первую сторону треугольника: ");
+    var a = double.Parse(Console.ReadLine());
+    Console.Write("Введите вторую сторону треугольника: ");
+    var b = double.Parse(Console.ReadLine());
+    Console.Write("Введите третью сторону треугольника: ");
+    var c = double.Parse(Console.ReadLine());
 
-try
-{
-    GetDigitsVariants(123);
+    if (a + b > c && a + c > b && b + c > a)
+    {
+        Console.WriteLine("Треугольник существует");
+    } else {
+        Console.WriteLine("Треугольника не существует");
+    }
+
 }
 catch (Exception ex)
 {

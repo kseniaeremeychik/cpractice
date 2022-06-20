@@ -1,12 +1,13 @@
-﻿var m = 2;
-
-try
+﻿try
 {
-    var z1 = (Math.Sqrt(Math.Pow((3 * m + 2), 2) - 24 * m)) / (3 * Math.Sqrt(m) - 2 / Math.Sqrt(m));
-    var z2 = -Math.Sqrt(m);
-
-    Console.WriteLine($"z1 = {z1}");
-    Console.WriteLine($"z2 = {z2}");
+    Console.Write("Введите порядковый номер месяца(допутим до 31): ");
+    var dayNumber = int.Parse(Console.ReadLine());
+    if (dayNumber > 31 || dayNumber < 0) {
+        Console.WriteLine("Неправильный порядковый номер месяца");
+    } else {
+        var leftDayNumber = 31 - dayNumber;
+        Console.WriteLine($"Дней осталось: {leftDayNumber}");
+    }    
 }
 catch (Exception ex)
 {

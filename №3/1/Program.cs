@@ -1,40 +1,15 @@
-﻿try
+﻿using static System.Console;
+using static System.Convert;
+using static System.Math;
+
+Write("Введите x: ");
+var x = ToInt16(ReadLine());
+
+static double F(int n, int x)
 {
-    Console.Write("Введите a: ");
-    int a = Convert.ToInt32(Console.ReadLine());
-
-    Console.Write("Введите b: ");
-    int b = Convert.ToInt32(Console.ReadLine());
-
-    A clas = new A(a, b);
-
-    clas.SummMethod(a, b);
-    clas.MathMethod(a, b);
+    return Pow(x,n)/n;
 }
 
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+double z = F(2, x) + F(4, x) + F(6, x);
 
-class A
-{
-    public int first;
-    public int second;
-
-    public A(int first, int second)
-    {
-        this.first = first;
-        this.second = second;
-    }
-
-    public void SummMethod(int a, int b)
-    {
-        Console.WriteLine($"Результат первого метода: {(Math.Sin(b) + 4)/2 * a}");
-    }
-
-    public void MathMethod(double a, double b)
-    {
-        Console.WriteLine($"Результат второго метода: {Math.Pow((a + b), 2)}");
-    }
-}
+WriteLine($"z = {z}");

@@ -1,56 +1,37 @@
-﻿try
-{
-    Product st = new Product() {
-    ProduceName = "Tovar",
-    Category = "Krutoi",
-    Price = 100,
-    };
-    st.Print();
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+﻿using static System.Console;
+using static System.Convert;
+using static System.Math;
 
-class Produce
+static double F(double x)
 {
-    public string ProduceName { get; set; }
-    public string Category { get; set; }
+    double y = 0;
 
-    public void Print()
+    if (x < 1)
     {
-        Console.WriteLine("Продукт создан");
+        y = Pow((Pow(x, 2) - 1), 2);
     }
-}
-
-class Toy : Product
-{
-    public string ToyName { get; set; }
-
-    public void Print()
+    else if (x > 1)
     {
-        Console.WriteLine("Игрушка создана");
+        y = 1 / (Pow((1 + x), 2));
+    }
+    else
+    {
+        y = 0;
     }
 
+    return y;
 }
 
-class MilkProduce : Produce
+Write("Введите a: ");
+double a = ToDouble(ReadLine());
+
+Write("Введите b: ");
+double b = ToDouble(ReadLine());
+
+Write("Введите h: ");
+double h = ToDouble(ReadLine());
+
+for (double i = a; i <= b; i += h)
 {
-    public string Milk { get; set; }
-
-    public void Print()
-    {
-        Console.WriteLine("Молочный продукт создан");
-    }
-
-}
-
-class Product : Produce
-{
-    public int Price { get; set; }
-
-    public void Print()
-    {
-        Console.WriteLine("Товар создан");
-    }
+    WriteLine($"{Round(i, 2)} = {Round(F(i), 2)}");
 }
